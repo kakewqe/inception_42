@@ -17,7 +17,7 @@ chmod +x wp-cli.phar
 ./wp-cli.phar config create --dbname="$MYSQL_DATABASE" --dbuser="$MYSQL_USER" --dbpass="$MYSQL_PASSWORD" --dbhost="mariadb" --allow-root
 
 # Installer WordPress avec les infos de l'admin
-./wp-cli.phar core install --url="localhost" --title="$WP_TITLE" --admin_user="$WP_ADMIN_USER" --admin_password="$WP_ADMIN_PASSWORD" --admin_email="$WP_ADMIN_EMAIL" --allow-root
+./wp-cli.phar core install --url="$DOMAIN_NAME" --title="$WP_TITLE" --admin_user="$WP_ADMIN_USER" --admin_password="$WP_ADMIN_PASSWORD" --admin_email="$WP_ADMIN_EMAIL" --allow-root
 
 # Créer l'utilisateur admin "zachamou" si ce n'est pas déjà fait
 if ! ./wp-cli.phar user get "$WP_ADMIN_USER" --allow-root > /dev/null 2>&1; then
