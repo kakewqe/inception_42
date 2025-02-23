@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Charger les variables d'environnement
-export $(grep -v '^#' .env | xargs)
+#export $(grep -v '^#' .env | xargs)
 
 # Se déplacer dans le répertoire WordPress
 cd /var/www/html

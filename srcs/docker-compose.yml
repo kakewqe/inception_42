@@ -1,4 +1,3 @@
-version: '3.8'
 
 services:
   nginx:
@@ -24,19 +23,19 @@ services:
     volumes:
       - /home/zachamou/data/var/lib/mysql/web:/var/www/html
     env_file:
-      - .env
+    - /home/deb/work_lab/env/.env
     networks:
       - inception
 
   mariadb:
-    build: ./requirements/mariadb/.
+    build: ./requirements/mariadb/
     container_name: mariadb
     volumes:
       - /home/zachamou/data/var/lib/mysql
     ports:
       - "3306:3306"
     env_file:
-      - .env
+      - /home/deb/work_lab/env/.env
     networks:
       - inception
 
